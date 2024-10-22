@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('equipes', function (Blueprint $table) {
             $table->id();
+            $table->string('image');
+            $table->string('equipe');
+            $table->string('categoria');
+            $table->string('nome');
+            $table->json('endereco');
+            $table->date('data');
+            $table->json('telefone');
             $table->timestamps();
         });
     }
