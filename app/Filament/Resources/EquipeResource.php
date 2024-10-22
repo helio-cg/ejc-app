@@ -33,8 +33,10 @@ class EquipeResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('equipe'),
-                FileUpload::make('image'),
+                TextInput::make('equipe')
+                    ->required(),
+                FileUpload::make('image')
+                    ->required(),
 
             Section::make('Jovens')
                 ->description('Prevent abuse by limiting the number of requests per period')
@@ -64,15 +66,15 @@ class EquipeResource extends Resource
                     Repeater::make('casais')
                     ->label('')
                     ->schema([
-                        TextInput::make('nome')->required(),
-                        TextInput::make('endereco')->required(),
+                        TextInput::make('nome')->columnSpan(2)->required(),
+                        TextInput::make('endereco')->columnSpan(2)->required(),
                         DatePicker::make('nacimento')
                             ->label('Data de Casamento')->format('d/m/Y')->required(),
                         TextInput::make('telefone')
                             ->label('Número com DDD')
                             ->required(),
                     ])
-                    ->columns(2)
+                    ->columns(6)
                 ]),
                 Section::make('Componentes')
                 ->description('Prevent abuse by limiting the number of requests per period')
@@ -82,15 +84,15 @@ class EquipeResource extends Resource
                     Repeater::make('componentes')
                     ->label('')
                     ->schema([
-                        TextInput::make('nome')->required(),
-                        TextInput::make('endereco')->required(),
+                        TextInput::make('nome')->columnSpan(2)->required(),
+                        TextInput::make('endereco')->columnSpan(2)->required(),
                         DatePicker::make('nacimento')
                             ->label('Data de Nascimento')->format('d/m/Y')->required(),
                         TextInput::make('telefone')
                             ->label('Número com DDD')
                             ->required(),
                     ])
-                    ->columns(2)
+                    ->columns(6)
                 ]),
             ]);
     }

@@ -38,25 +38,39 @@
     </head>
     <body>
 
-    <div style="text-align: center;">
-        <p style="font-size: 24px;"><b>III ENCONTRO DE JOVENS COM CRISTO</b></p>
-        <p><b>PARÓQUIA NOSSA SRA. DO PERPETUO SOCORRO – IGUATU-CE</b></p>
-        <h2>{{ $equipe->equipe }}</h2>
-    </div>
+
+    <table>
+        <tr>
+            <td style="left: 0; right: 10;">
+                <img src="./img/logo/logo.png" style="width: 50px; height: 100px;">
+            </td>
+            <td>
+                <div style="text-align: center;">
+                    <p style="font-size: 24px;"><b>ENCONTRO DE JOVENS COM CRISTO - EJC</b></p>
+                    <p><b>PARÓQUIA DE N. SRA. DO PERPÉTUO SOCORRO</b></p>
+                    <p><b>PRADO – IGUATU-CE</b></p>
+                    <h2>{{ $equipe->equipe }}</h2>
+                </div>
+            </td>
+            <td style="top: 0; right: 0; left: 10;">
+                <img src="./img/logo/brasao.png" style="width: 70px; height: 150px;">
+            </td>
+        </tr>
+         </table>
     <table>
     <tr>
         <td>
             <h2 style="margin-bottom:1px;">Jovens</h2>
             @foreach ($equipe->jovens as $item)
-                <p style="font-size: 18px;"><b>{{$item['nome']}}</b></p>
-                <p>{{$item['endereco']}}</p>
-                <p><b>DN</b>: {{$item['nacimento']}} - {{$item['telefone']}} </p><br>
+                <p style="font-size: 15px;"><b>{{$item['nome']}}</b></p>
+                <p style="font-size: 14px;">{{$item['endereco']}}</p>
+                <p style="font-size: 13px;"><b>DN</b>: {{$item['nacimento']}} - {{$item['telefone']}} </p><br>
             @endforeach
             <h2 style="margin-bottom:1px;">Casal</h2>
             @foreach ($equipe->casais as $item)
-                <p style="font-size: 18px;"><b>{{$item['nome']}}</b></p>
-                <span>{{$item['endereco']}}</span>
-                <p><b>DC</b>: {{$item['nacimento']}} - {{$item['telefone']}} </p>
+                <p style="font-size: 15px;"><b>{{$item['nome']}}</b></p>
+                <p style="font-size: 14px;">{{$item['endereco']}}</p>
+                <p style="font-size: 13px;"><b>DC</b>: {{$item['nacimento']}} - {{$item['telefone']}} </p>
             @endforeach
         </td>
         <td class="alinhamento" style="top: 0; right: 0;">
@@ -71,13 +85,13 @@
 
 <table>
     @foreach ($equipe->componentes as $index => $item)
-        @if ($index % 2 == 0 && $index != 0)
+        @if ($index % 3 == 0 && $index != 0)
             </tr><tr> <!-- Fecha a linha anterior e inicia uma nova a cada 2 itens -->
         @endif
         <td>
-            <p style="font-size: 18px;"><b>{{$item['nome']}}</b></p>
-            <p>{{$item['endereco']}}</p>
-            <p><b>DN</b>: {{$item['nacimento']}} - {{$item['telefone']}} </p><br>
+            <p style="font-size: 14px;"><b>{{$item['nome']}}</b></p>
+            <p style="font-size: 14px;">{{$item['endereco']}}</p>
+            <p style="font-size: 13px;"><b>DN</b>: {{$item['nacimento']}} - {{$item['telefone']}} </p><br>
         </td>
     @endforeach
 </tr>
