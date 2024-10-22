@@ -8,16 +8,15 @@ class Equipe extends Model
 {
     protected $fillable = [
         'equipe',
-        'categoria',
-        'nome',
-        'endereco',
-        'data',
-        'telefone',
-        'image'
+        'image',
+        'jovens',
+        'casais',
+        'componentes'
     ];
 
     protected $casts = [
-        'endereco' => 'array',
-        'telefone' => 'array',
+        'jovens' => 'array',
+        'casais' => 'array',
+        'componentes' => 'array',
     ];
 }
