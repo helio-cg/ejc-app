@@ -42,7 +42,7 @@
     <body class="font-sans antialiased">
         <div class="container">
             <h1>Clique no botão relacionado a sua equipe</h1>
-            <a class="btn-verde" href="http://sjc.stmip.net/equipe/equipes/1/edit">Equipe de Secrétaria</a>
+            <a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/1/edit">Equipe de Secrétaria</a>
         </div>
     </body>
 </html>
