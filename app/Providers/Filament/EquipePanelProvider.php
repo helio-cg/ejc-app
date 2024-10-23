@@ -29,6 +29,7 @@ class EquipePanelProvider extends PanelProvider
                 'primary' => Color::Amber,
             ])
             ->topNavigation()
+            ->defaultThemeMode(ThemeMode::Light)
             ->discoverResources(in: app_path('Filament/Equipe/Resources'), for: 'App\\Filament\\Equipe\\Resources')
             ->discoverPages(in: app_path('Filament/Equipe/Pages'), for: 'App\\Filament\\Equipe\\Pages')
             ->pages([
