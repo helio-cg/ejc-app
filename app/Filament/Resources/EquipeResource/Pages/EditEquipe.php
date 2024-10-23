@@ -22,4 +22,9 @@ class EditEquipe extends EditRecord
                 ->url(fn ($record): string => route('pdf.equipe', ['equipe' => $record->equipe]))->openUrlInNewTab(),
         ];
     }
+
+    protected static function canEdit(): bool
+{
+    return true; // Permite que qualquer um edite
+}
 }

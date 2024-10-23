@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources;
+namespace App\Filament\Equipe\Resources;
 
 use Filament\Forms;
 use Filament\Tables;
@@ -9,21 +9,16 @@ use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Split;
-use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Section;
-use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Components\Repeater;
-use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
-use Filament\Tables\Columns\ImageColumn;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
 use Illuminate\Database\Eloquent\Builder;
 use Filament\Forms\Components\ToggleButtons;
-use App\Filament\Resources\EquipeResource\Pages;
-use Ysfkaya\FilamentPhoneInput\Forms\PhoneInput;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use App\Filament\Resources\EquipeResource\RelationManagers;
+use App\Filament\Equipe\Resources\EquipeResource\Pages;
+use App\Filament\Equipe\Resources\EquipeResource\RelationManagers;
 
 class EquipeResource extends Resource
 {
@@ -31,11 +26,7 @@ class EquipeResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-    protected static ?string $navigationLabel = 'Eqp. de Trabalho';
-    protected static ?int $navigationSort = 2;
-
     protected static ?string $modelLabel = 'Equipes de Trabalho';
-
 
     public static function form(Form $form): Form
     {
@@ -53,6 +44,7 @@ class EquipeResource extends Resource
                                 '3' => 'Coordenado Geral',
                                 '4' => 'Diosesano'
                             ])
+                            ->hidden()
                             ->inline()
                             ->disabled(static fn ($record) => $record !== null)
                             ->required()
@@ -67,10 +59,7 @@ class EquipeResource extends Resource
                     ]),
                 ])->from('md')->columnSpanFull(),
 
-
-
-            Section::make('Jovens')
-                ->label('Jovem Coordenador')
+            Section::make('Jovens Coordenador')
                 ->description('Prevent abuse by limiting the number of requests per period')
                 ->collapsible()
                 ->persistCollapsed()
@@ -90,7 +79,7 @@ class EquipeResource extends Resource
                     ->columns(6)
                 ]),
 
-            Section::make('Casal Coordenador')
+                Section::make('Casal Coordenador')
                 ->description('Prevent abuse by limiting the number of requests per period')
                 ->collapsible()
                 ->persistCollapsed()
@@ -133,21 +122,13 @@ class EquipeResource extends Resource
     {
         return $table
             ->columns([
-                ImageColumn::make('image'),
-                TextColumn::make('equipe')
+                //
             ])
             ->filters([
                 //
             ])
             ->actions([
-
-                Tables\Actions\EditAction::make()
-                    ->label('Editar'),
-                Tables\Actions\Action::make('link')
-                    ->label('Gerar PDF')
-                    ->icon('heroicon-m-document')
-                    //->iconButton()
-                    ->url(fn ($record): string => route('pdf.equipe', ['equipe' => $record->equipe]))->openUrlInNewTab(),
+                Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

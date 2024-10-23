@@ -9,4 +9,9 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateEquipe extends CreateRecord
 {
     protected static string $resource = EquipeResource::class;
+
+    protected static function canViewAny(): bool
+{
+    return true; // Permite que qualquer um veja o recurso
+}
 }

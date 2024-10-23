@@ -2,9 +2,9 @@
 
 return [
 
-    'title' => 'Criar :label',
+    'title' => 'Cadastrar :label',
 
-    'breadcrumb' => 'Criar',
+    'breadcrumb' => 'Cadastrar',
 
     'form' => [
 
@@ -15,11 +15,11 @@ return [
             ],
 
             'create' => [
-                'label' => 'Criar',
+                'label' => 'Cadastrar',
             ],
 
             'create_another' => [
-                'label' => 'Salvar e criar outro',
+                'label' => 'Salvar e cadastrar outro',
             ],
 
         ],

@@ -23,7 +23,7 @@ class InscricaoResource extends Resource
     protected static ?string $navigationLabel = 'Pré Inscrição';
     protected static ?int $navigationSort = 1;
 
-    protected static ?string $modelLabel = 'Pré Inscrição';
+    protected static ?string $modelLabel = 'novo';
     protected static ?string $pluralModelLabel = 'Pré Inscrição';
 
     public static function form(Form $form): Form
