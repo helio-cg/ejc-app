@@ -8,29 +8,32 @@
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+                <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
 
 
         <style>
         html, body {
+            font-family: "Roboto", sans-serif;
     height: 100%;
     margin: 0;
 }
 
 .container {
-    display: grid;
     place-items: center;
     height: 100%;
 }
 
 .btn-verde {
-    background-color: #28a745; /* Verde */
+    background-color: #000000; /* Verde */
     color: white; /* Texto branco */
     border: none; /* Sem borda */
     border-radius: 5px; /* Bordas arredondadas */
-    padding: 10px 20px; /* Espaçamento interno */
+    padding: 20px 30px; /* Espaçamento interno */
     font-size: 16px; /* Tamanho da fonte */
     cursor: pointer; /* Cursor de mão ao passar o mouse */
+    font-weight: bold;
+    margin: 10px;
     transition: background-color 0.3s; /* Transição suave para a cor de fundo */
 }
 
@@ -41,8 +44,14 @@
     </head>
     <body class="font-sans antialiased">
         <div class="container">
-            <h1>Clique no botão relacionado a sua equipe</h1>
+            <br>
+            <img src="./img/logo/logo.png">
+            <br>
+            <h2>Cadastro das equipes de trabalho</h2>
+            <h3>Clique no botão relacionado a sua equipe</h3>
+            <br>
             <a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/1/edit">Equipe de Secrétaria</a>
+            <a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/2/edit">Equipe de Externa</a>
         </div>
     </body>
 </html>
