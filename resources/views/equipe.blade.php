@@ -13,11 +13,14 @@
                 font-style: normal;
             }
 
+            p {
+                margin: 4px 0; /* Margem superior e inferior de 5 pixels */
+            }
 
-         table {
-            width: 700px; /* Largura da tabela em pixels */
-            border-collapse: collapse; /* Para que as bordas se unam */
-        }
+            table {
+                width: 700px; /* Largura da tabela em pixels */
+                border-collapse: collapse; /* Para que as bordas se unam */
+            }
             .alinhamento {
                 position: relative;
                 height: 100px; /* Defina uma altura para a célula */
@@ -28,16 +31,9 @@
                 top: 0;
                 right: 0;
             }
-
-            p {
-                margin: 4px 0; /* Margem superior e inferior de 5 pixels */
-            }
-
-
         </style>
     </head>
     <body>
-
 
     <table>
         <tr>
@@ -56,55 +52,52 @@
                 <img src="./img/logo/brasao.png" style="width: 70px; height: 150px;">
             </td>
         </tr>
-         </table>
-    <table>
-    <tr>
-        <td>
-        @if (isset($equipe->jovens))
-            <h2 style="margin-bottom:1px;">Jovens</h2>
-            @foreach ($equipe->jovens as $item)
-                <p style="font-size: 15px;"><b>{{$item['nome']}}</b></p>
-                <p style="font-size: 14px;">{{$item['endereco']}}</p>
-                <p style="font-size: 13px;"><b>DN</b>: {{$item['nacimento']}} - {{$item['telefone']}} </p><br>
-            @endforeach
-        @endif
-        @if (isset($equipe->casais))
-            <h2 style="margin-bottom:1px;">Casal</h2>
-            @foreach ($equipe->casais as $item)
-                <p style="font-size: 15px;"><b>{{$item['nome']}}</b></p>
-                <p style="font-size: 14px;">{{$item['endereco']}}</p>
-                <p style="font-size: 13px;"><b>DC</b>: {{$item['nacimento']}} - {{$item['telefone']}} </p>
-            @endforeach
-        @endif
-        </td>
-        <td class="alinhamento" style="top: 0; right: 0;">
-            <img src="./storage/{{ $equipe->image }}" style="width: 300px;">
-        </td>
-    </tr>
     </table>
-@if (isset($equipe->componentes))
-    <div style="text-align: center;">
-        <h2>Componentes</h2>
-    </div>
+
     <table>
-        @foreach ($equipe->componentes as $index => $item)
-            @if ($index % 3 == 0 && $index != 0)
-                </tr><tr> <!-- Fecha a linha anterior e inicia uma nova a cada 2 itens -->
-            @endif
+        <tr>
             <td>
-                <p style="font-size: 14px;"><b>{{$item['nome']}}</b></p>
-                <p style="font-size: 14px;">{{$item['endereco']}}</p>
-                <p style="font-size: 13px;"><b>DN</b>: {{$item['nacimento']}} - {{$item['telefone']}} </p><br>
+            @if (isset($equipe->jovens))
+                <h2 style="margin-bottom:1px;">Jovens</h2>
+                @foreach ($equipe->jovens as $item)
+                    <p style="font-size: 15px;"><b>{{$item['nome']}}</b></p>
+                    <p style="font-size: 14px;">{{$item['endereco']}}</p>
+                    <p style="font-size: 13px;"><b>DN</b>: {{$item['nacimento']}} - {{$item['telefone']}} </p><br>
+                @endforeach
+            @endif
+            @if (isset($equipe->casais))
+                <h2 style="margin-bottom:1px;">Casal</h2>
+                @foreach ($equipe->casais as $item)
+                    <p style="font-size: 15px;"><b>{{$item['nome']}}</b></p>
+                    <p style="font-size: 14px;">{{$item['endereco']}}</p>
+                    <p style="font-size: 13px;"><b>DC</b>: {{$item['nacimento']}} - {{$item['telefone']}} </p>
+                @endforeach
+            @endif
             </td>
-        @endforeach
-    </tr>
+            <td class="alinhamento" style="top: 0; right: 0;">
+                <img src="./storage/{{ $equipe->image }}" style="width: 300px;">
+            </td>
+        </tr>
     </table>
-@else
-Preencha o formulário inserindo <br>os compeonentes da equipe
-@endif
-
-
-
-
+    @if (isset($equipe->componentes))
+        <div style="text-align: center;">
+            <h2>Componentes</h2>
+        </div>
+        <table>
+            @foreach ($equipe->componentes as $index => $item)
+                @if ($index % 3 == 0 && $index != 0)
+                    </tr><tr> <!-- Fecha a linha anterior e inicia uma nova a cada 2 itens -->
+                @endif
+                <td>
+                    <p style="font-size: 14px;"><b>{{$item['nome']}}</b></p>
+                    <p style="font-size: 14px;">{{$item['endereco']}}</p>
+                    <p style="font-size: 13px;"><b>DN</b>: {{$item['nacimento']}} - {{$item['telefone']}} </p><br>
+                </td>
+            @endforeach
+        </tr>
+        </table>
+    @else
+    Preencha o formulário inserindo <br>os compeonentes da equipe
+    @endif
     </body>
 </html>

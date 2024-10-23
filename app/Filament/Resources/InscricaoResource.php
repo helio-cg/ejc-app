@@ -6,6 +6,7 @@ use App\Filament\Resources\InscricaoResource\Pages;
 use App\Filament\Resources\InscricaoResource\RelationManagers;
 use App\Models\Inscricao;
 use Filament\Forms;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -21,14 +22,15 @@ class InscricaoResource extends Resource
 
     protected static ?string $navigationLabel = 'Pré Inscrição';
     protected static ?int $navigationSort = 1;
-    
+
     protected static ?string $navigationGroup = 'Cadastro';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                //
+                TextInput::make('nome_completo'),
+                TextInput::make('apelido'),
             ]);
     }
 

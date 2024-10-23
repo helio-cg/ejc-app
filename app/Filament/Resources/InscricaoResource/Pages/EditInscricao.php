@@ -13,6 +13,11 @@ class EditInscricao extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
+            Actions\Action::make('link')
+                ->label('Gerar PDF')
+                ->icon('heroicon-m-document')
+                //->iconButton()
+                ->url(fn ($record): string => route('pdf.inscricao', ['id' => $record->id]))->openUrlInNewTab(),
             Actions\DeleteAction::make(),
         ];
     }
