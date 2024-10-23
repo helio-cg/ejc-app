@@ -43,7 +43,7 @@
     <table>
         <tr>
             <td>
-                <p><b>Nome Completo:</b> ______________________________________________</p>
+                <p><b>Nome Completo:</b> {{ $inscrito->nome_completo}}</p>
                 <p><b>Nome ou apelido que gostaria de ser chamado:</b> ____________________</p>
                 <p><b>Data de nascimento:</b> ____/____/______ <b>Idade</b> (anos completos): _______</p>
                 <p><b>Sexo:</b> Masculino (__) Feminino (__)  <b>Telefone(s):</b> _____________________</p>
@@ -128,7 +128,7 @@
         </tr>
     </table>
 
-    
+
     <h3 style="text-align: center;">ATENÇÃO!</h3>
 
     <p style="text-align: center;">CRITÉRIOS que devem ser observados ao se visitar os jovens para participar do EJC:<br>

@@ -17,7 +17,7 @@ class EditInscricao extends EditRecord
                 ->label('Gerar PDF')
                 ->icon('heroicon-m-document')
                 //->iconButton()
-                ->url(fn ($record): string => route('pdf.inscricao', ['id' => $record->id]))->openUrlInNewTab(),
+                ->url(fn ($record): string => route('pdf.inscricao', ['tipo' => 'prenchido','id' => $record->id]))->openUrlInNewTab(),
             Actions\DeleteAction::make(),
         ];
     }

@@ -24,10 +24,16 @@ class PdfController extends Controller
 
     }
 
-    public function iscricao($id){
+    public function iscricao($tipo,$id){
         $inscrito = Inscricao::where('id',$id)->first();
 
-        $pdf = Pdf::loadView('inscricao.pdf', compact('inscrito'));
+        $pdf = Pdf::loadView('inscricao.pdf-'.$tipo, compact('inscrito'));
         return $pdf->stream('inscrito-'.$inscrito->nome_completo.'.pdf');
+    }
+
+    public function form($filename){
+
+        $pdf = Pdf::loadView('forms.equipes-'.$filename.'-form', compact('inscrito'));
+        return $pdf->stream('ficha-de-componentes-'.$filename.'.pdf');
     }
 }
