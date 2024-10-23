@@ -3,17 +3,17 @@
 @config 'tailwind.config.js';
 
 .fi-body {
-    @apply bg-blue-800;
+    @apply bg-blue-100;
 }
 .fi-logo{
     @apply text-white;
 }
 .fi-topbar nav{
-    @apply bg-blue-800 text-white;
+    @apply bg-blue-700 text-white;
 }
 
 .fi-sidebar-header{
-    @apply bg-blue-800;
+    @apply bg-blue-800 ;
 }
 
 .fi-sidebar-nav {
@@ -21,7 +21,7 @@
 }
 
 .fi-main{
-    @apply rounded-tl-3xl bg-blue-50;
+    @apply rounded-tl-3xl rounded-tr-3xl mt-10 bg-blue-50;
 }
 /* BUTTON AND INPUT */
 .fi-input-wrp {
@@ -34,11 +34,16 @@
     padding-right: 18px !important;
     padding-left: 18px !important;
 }
+/* topbar item*/
+.fi-topbar-item-label{
+    @apply text-gray-900;
+}
 
 /* SIDEBAR ITEM */
 .fi-sidebar-group-label{
     @apply text-gray-400;
 }
+
 .fi-sidebar-item a {
     @apply px-4 py-2 rounded-xl;
 }
@@ -50,7 +55,7 @@
 
 .fi-sidebar-item a:focus,
 .fi-sidebar-item a:hover {
-    @apply bg-primary-100 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] dark:bg-primary-900 dark:shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px] transition-all ease-in-out duration-100 !important;
+    @apply bg-blue-800 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] dark:bg-primary-900 dark:shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px] transition-all ease-in-out duration-100 !important;
 }
 
 .fi-sidebar-item a:hover svg,

@@ -33,7 +33,8 @@ class AdminPanelProvider extends PanelProvider
                 'primary' => Color::Blue,
             ])
             ->defaultThemeMode(ThemeMode::Light)
-            ->maxContentWidth(MaxWidth::Full)
+            //->maxContentWidth(MaxWidth::Full)
+            ->topNavigation()
             ->viteTheme('resources/css/filament/admin/theme.css')
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
