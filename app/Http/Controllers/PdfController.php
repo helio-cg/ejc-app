@@ -14,9 +14,8 @@ class PdfController extends Controller
     public function index($equipe)
     {
         $equipe = Equipe::where('equipe',$equipe)->first();
-
         $pdf = Pdf::loadView('equipe', compact('equipe'));
-        return $pdf->stream('equipe-de-'.$equipe.'.pdf');
+        return $pdf->stream('equipe-de-'.$equipe->equipe.'.pdf');
 
         // Renderizar a view
         //$html = view('equipe',compact('equipe'))->render();
