@@ -25,5 +25,55 @@ class DatabaseSeeder extends Seeder
             'image' => 'secretaria.jpg',
             'equipe' => 'Secretária',
         ]);
+
+        Equipe::create([
+            'image' => 'cafezinho.jpg',
+            'equipe' => 'Cafezinho',
+        ]);
+
+        Equipe::create([
+            'image' => 'circulos.jpg',
+            'equipe' => 'Circulos',
+        ]);
+
+        Equipe::create([
+            'image' => 'compras.jpg',
+            'equipe' => 'Compras',
+        ]);
+
+        Equipe::create([
+            'image' => 'gracons.jpg',
+            'equipe' => 'Graçons',
+        ]);
+
+        Equipe::create([
+            'image' => 'limpeza.jpg',
+            'equipe' => 'Limpeza',
+        ]);
+
+        Equipe::create([
+            'image' => 'liturgia.jpg',
+            'equipe' => 'Liturgia',
+        ]);
+
+        Equipe::create([
+            'image' => 'mini-bar.jpg',
+            'equipe' => 'Mini Bar',
+        ]);
+
+        Equipe::create([
+            'image' => 'sala.jpg',
+            'equipe' => 'Sala',
+        ]);
+
+        Equipe::create([
+            'image' => 'sociodrama.jpg',
+            'equipe' => 'Sociodrama',
+        ]);
+
+        Equipe::create([
+            'image' => 'vigilia.png',
+            'equipe' => 'Vigilia',
+        ]);
     }
 }
