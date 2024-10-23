@@ -11,14 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('equipes', function (Blueprint $table) {
+        Schema::create('inscricaos', function (Blueprint $table) {
             $table->id();
-            $table->string('image')->nullable();
-            $table->string('equipe')->unique();
-            $table->integer('tipo')->default(1);
-            $table->json('jovens')->nullable();
-            $table->json('casais')->nullable();
-            $table->json('componentes')->nullable();
+            $table->string('nome_completo');
             $table->timestamps();
         });
     }
@@ -28,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('equipes');
+        Schema::dropIfExists('inscricaos');
     }
 };

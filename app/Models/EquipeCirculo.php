@@ -4,19 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Equipe extends Model
+class EquipeCirculo extends Model
 {
     protected $fillable = [
         'equipe',
         'image',
-        'tipo',
-        'jovens',
         'casais',
         'componentes'
     ];
 
     protected $casts = [
-        'jovens' => 'array',
         'casais' => 'array',
         'componentes' => 'array',
     ];

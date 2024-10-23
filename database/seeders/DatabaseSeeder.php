@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Equipe;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -18,6 +19,11 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'Admin',
             'email' => 'admin@admin.com',
+        ]);
+
+        Equipe::create([
+            'image' => 'secretaria.jpg',
+            'equipe' => 'Secretária',
         ]);
     }
 }

@@ -60,42 +60,48 @@
     <table>
     <tr>
         <td>
+        @if (isset($equipe->jovens))
             <h2 style="margin-bottom:1px;">Jovens</h2>
             @foreach ($equipe->jovens as $item)
                 <p style="font-size: 15px;"><b>{{$item['nome']}}</b></p>
                 <p style="font-size: 14px;">{{$item['endereco']}}</p>
                 <p style="font-size: 13px;"><b>DN</b>: {{$item['nacimento']}} - {{$item['telefone']}} </p><br>
             @endforeach
+        @endif
+        @if (isset($equipe->casais))
             <h2 style="margin-bottom:1px;">Casal</h2>
             @foreach ($equipe->casais as $item)
                 <p style="font-size: 15px;"><b>{{$item['nome']}}</b></p>
                 <p style="font-size: 14px;">{{$item['endereco']}}</p>
                 <p style="font-size: 13px;"><b>DC</b>: {{$item['nacimento']}} - {{$item['telefone']}} </p>
             @endforeach
+        @endif
         </td>
         <td class="alinhamento" style="top: 0; right: 0;">
             <img src="./storage/{{ $equipe->image }}" style="width: 300px;">
         </td>
     </tr>
     </table>
+@if (isset($equipe->componentes))
     <div style="text-align: center;">
         <h2>Componentes</h2>
     </div>
-
-
-<table>
-    @foreach ($equipe->componentes as $index => $item)
-        @if ($index % 3 == 0 && $index != 0)
-            </tr><tr> <!-- Fecha a linha anterior e inicia uma nova a cada 2 itens -->
-        @endif
-        <td>
-            <p style="font-size: 14px;"><b>{{$item['nome']}}</b></p>
-            <p style="font-size: 14px;">{{$item['endereco']}}</p>
-            <p style="font-size: 13px;"><b>DN</b>: {{$item['nacimento']}} - {{$item['telefone']}} </p><br>
-        </td>
-    @endforeach
-</tr>
-</table>
+    <table>
+        @foreach ($equipe->componentes as $index => $item)
+            @if ($index % 3 == 0 && $index != 0)
+                </tr><tr> <!-- Fecha a linha anterior e inicia uma nova a cada 2 itens -->
+            @endif
+            <td>
+                <p style="font-size: 14px;"><b>{{$item['nome']}}</b></p>
+                <p style="font-size: 14px;">{{$item['endereco']}}</p>
+                <p style="font-size: 13px;"><b>DN</b>: {{$item['nacimento']}} - {{$item['telefone']}} </p><br>
+            </td>
+        @endforeach
+    </tr>
+    </table>
+@else
+Preencha o formulário inserindo <br>os compeonentes da equipe
+@endif
 
 
 

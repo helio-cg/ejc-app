@@ -13,7 +13,13 @@ class EditEquipe extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
-            Actions\DeleteAction::make(),
+            Actions\DeleteAction::make()
+            ->requiresConfirmation(),
+            Actions\Action::make('link')
+                ->label('Gerar PDF')
+                ->icon('heroicon-m-document')
+                //->iconButton()
+                ->url(fn ($record): string => route('pdf.equipe', ['equipe' => $record->equipe]))->openUrlInNewTab(),
         ];
     }
 }

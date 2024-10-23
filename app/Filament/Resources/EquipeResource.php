@@ -8,6 +8,7 @@ use App\Models\Equipe;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
+use Filament\Forms\Components\Split;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Fieldset;
@@ -18,6 +19,7 @@ use Filament\Tables\Columns\ImageColumn;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
 use Illuminate\Database\Eloquent\Builder;
+use Filament\Forms\Components\ToggleButtons;
 use App\Filament\Resources\EquipeResource\Pages;
 use Ysfkaya\FilamentPhoneInput\Forms\PhoneInput;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -29,14 +31,41 @@ class EquipeResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    protected static ?string $navigationLabel = 'Equipe de Trabalho';
+    protected static ?int $navigationSort = 2;
+    protected static ?string $navigationGroup = 'Equipes';
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                TextInput::make('equipe')
-                    ->required(),
-                FileUpload::make('image')
-                    ->required(),
+                Split::make([
+                    Section::make([
+                        TextInput::make('equipe')
+                        ->disabled(static fn ($record) => $record !== null)
+                        ->required(),
+                        ToggleButtons::make('tipo')
+                            ->options([
+                                '1' => 'Equipe de Trabalhos',
+                                '2' => 'Equipe Dirigente',
+                                '3' => 'Coordenado Geral',
+                                '4' => 'Diosesano'
+                            ])
+                            ->inline()
+                            ->disabled(static fn ($record) => $record !== null)
+                            ->required()
+                    ]),
+                    Section::make([
+                        FileUpload::make('image')
+                        ->image()
+                        ->imageEditorAspectRatios([
+                            '1:1',
+                        ])
+                        ->required(),
+                    ]),
+                ])->from('md')->columnSpanFull(),
+
+
 
             Section::make('Jovens')
                 ->description('Prevent abuse by limiting the number of requests per period')
