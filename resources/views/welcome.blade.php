@@ -50,8 +50,8 @@
             <h2>Cadastro das equipes de trabalho</h2>
             <h3>Clique no botão relacionado a sua equipe</h3>
             <br>
-            <p><a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/1/edit">Equipe de Secrétaria</a></p>
-            <p><a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/2/edit">Equipe de Cafezinho</a><br></p>
+            <p style="margin-bottom: 4px;"><a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/1/edit">Equipe de Secrétaria</a></p>
+            <p style="margin-bottom: 4px;"><a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/2/edit">Equipe de Cafezinho</a><br></p>
             <a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/3/edit">Equipe de Circulos</a><br>
             <a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/4/edit">Equipe de Compras</a><br>
             <a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/5/edit">Equipe de Graçons</a><br>
