@@ -18,7 +18,6 @@ return new class extends Migration
             $table->json('jovens')->nullable();
             $table->json('casais')->nullable();
             $table->json('componentes')->nullable();
-            $table->timestamps();
         });
     }
 

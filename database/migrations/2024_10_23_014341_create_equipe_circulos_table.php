@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('equipe')->unique();
             $table->json('casais');
             $table->json('componentes');
-            $table->timestamps();
         });
     }
 
