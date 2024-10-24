@@ -125,6 +125,10 @@ class EquipeResource extends Resource
         return $table
             ->query(Equipe::query()->where('equipe','!=','Dirigente')->where('equipe','!=','Conselho Diosesano')->where('equipe','!=','Coordenação Geral'))
             ->defaultPaginationPageOption(25)
+            ->contentGrid([
+                'md' => 2,
+                'xl' => 3,
+            ])
             ->columns([
                 Tables\Columns\Layout\Split::make([
                 ImageColumn::make('image')
@@ -142,10 +146,13 @@ class EquipeResource extends Resource
             ->actions([
 
                 Tables\Actions\EditAction::make()
-                    ->label('Editar'),
+                    ->label('Editar')
+                    ->button(),
                 Tables\Actions\Action::make('link')
                     ->label('Gerar PDF')
                     ->icon('heroicon-m-document')
+                    ->button()
+                    ->color('success')
                     //->iconButton()
                     ->url(fn ($record): string => route('pdf.equipe', ['equipe' => $record->equipe]))->openUrlInNewTab(),
             ])
