@@ -66,32 +66,21 @@
                     <p style="font-size: 13px;"><b>Telefone:</b> {{$item['telefone']}} </p><br>
                 @endforeach
             @endif
+            @if (isset($equipe->casais))
+                <h2 style="margin-bottom:1px;">Casal</h2>
+                @foreach ($equipe->casais as $item)
+                    <p style="font-size: 15px;"><b>{{$item['nome']}} ({{$item['funcao']}})</b></p>
+                    <p style="font-size: 14px;">{{$item['endereco']}}</p>
+                    <p style="font-size: 13px;"><b>DC</b>: {{$item['nacimento']}} </p>
+                    <p style="font-size: 13px;"><b>Telefone:</b> {{$item['telefone']}} </p><br>
+                @endforeach
+            @endif
             </td>
             <td class="alinhamento" style="top: 0; right: 0;">
                 <img src="./storage/{{ $equipe->image }}" style="width: 300px;">
             </td>
         </tr>
     </table>
-    @if (isset($equipe->casais))
-        <div style="text-align: center;">
-            <h2>Casais Componentes</h2>
-        </div>
-        <table>
-            @foreach ($equipe->casais as $index => $item)
-                @if ($index % 2 == 0 && $index != 0)
-                    </tr><tr> <!-- Fecha a linha anterior e inicia uma nova a cada 2 itens -->
-                @endif
-                <td>
-                    <p style="font-size: 14px;"><b>{{$item['nome']}} ({{$item['funcao']}})</b></p>
-                    <p style="font-size: 14px;">{{$item['endereco']}}</p>
-                    <p style="font-size: 13px;"><b>DC</b>: {{$item['nacimento']}} <b>Fone:</b> {{$item['telefone']}} </p><br>
-                </td>
-            @endforeach
-        </tr>
-        </table>
-    @else
-    Preencha o formulário inserindo <br>os casais compeonentes da equipe
-    @endif
     @if (isset($equipe->componentes))
         <div style="text-align: center;">
             <h2>Jovens Componentes</h2>
