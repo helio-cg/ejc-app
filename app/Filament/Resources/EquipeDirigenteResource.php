@@ -78,7 +78,7 @@ class EquipeDirigenteResource extends Resource
                     ])->columns(3)
                 ]),
 
-                Section::make('Casal Coordenador')
+                Section::make('Casais')
                 ->description('Casais da equipe dirigente')
                 ->collapsible()
                 ->persistCollapsed()
