@@ -50,16 +50,16 @@
             <h2>Cadastro das equipes de trabalho</h2>
             <h3>Clique no botão relacionado a sua equipe</h3>
             <br>
-            <a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/1/edit">Equipe de Secrétaria</a>
-            <a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/2/edit">Equipe de Cafezinho</a>
-            <a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/3/edit">Equipe de Circulos</a>
-            <a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/4/edit">Equipe de Compras</a>
-            <a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/5/edit">Equipe de Graçons</a>
-            <a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/6/edit">Equipe de Limpeza</a>
-            <a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/7/edit">Equipe de Liturgia</a>
-            <a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/8/edit">Equipe de Mini Bar</a>
-            <a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/9/edit">Equipe de Sala</a>
-            <a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/10/edit">Equipe de Sociodrama</a>
+            <a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/1/edit">Equipe de Secrétaria</a><br>
+            <a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/2/edit">Equipe de Cafezinho</a><br>
+            <a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/3/edit">Equipe de Circulos</a><br>
+            <a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/4/edit">Equipe de Compras</a><br>
+            <a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/5/edit">Equipe de Graçons</a><br>
+            <a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/6/edit">Equipe de Limpeza</a><br>
+            <a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/7/edit">Equipe de Liturgia</a><br>
+            <a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/8/edit">Equipe de Mini Bar</a><br>
+            <a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/9/edit">Equipe de Sala</a><br>
+            <a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/10/edit">Equipe de Sociodrama</a><br>
             <a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/11/edit">Equipe de Vigilia</a>
         </div>
     </body>
