@@ -72,10 +72,10 @@ class EquipeResource extends Resource
                         TextInput::make('endereco')->columnSpan(2)->required(),
                         DatePicker::make('nacimento')
                             ->label('Data de Nascimento')
-                            ->format('d/m/Y')->required(),
+                            ->format('d/m/Y')->required()->columnSpanFull(),
                         TextInput::make('telefone')
                             ->label('Número com DDD')
-                            ->required(),
+                            ->required()->columnSpanFull(),
                     ])
                     ->columns(6)
                 ]),
@@ -91,10 +91,10 @@ class EquipeResource extends Resource
                         TextInput::make('nome')->columnSpan(2)->required(),
                         TextInput::make('endereco')->columnSpan(2)->required(),
                         DatePicker::make('nacimento')
-                            ->label('Data de Casamento')->format('d/m/Y')->required(),
+                            ->label('Data de Casamento')->format('d/m/Y')->required()->columnSpanFull(),
                         TextInput::make('telefone')
                             ->label('Número com DDD')
-                            ->required(),
+                            ->required()->columnSpanFull(),
                     ])
                     ->columns(6)
                 ]),
@@ -109,10 +109,10 @@ class EquipeResource extends Resource
                         TextInput::make('nome')->columnSpan(2)->required(),
                         TextInput::make('endereco')->columnSpan(2)->required(),
                         DatePicker::make('nacimento')
-                            ->label('Data de Nascimento')->format('d/m/Y')->required(),
+                            ->label('Data de Nascimento')->format('d/m/Y')->required()->columnSpanFull(),
                         TextInput::make('telefone')
                             ->label('Número com DDD')
-                            ->required(),
+                            ->required()->columnSpanFull(),
                     ])
                     ->columns(6)
                 ]),
