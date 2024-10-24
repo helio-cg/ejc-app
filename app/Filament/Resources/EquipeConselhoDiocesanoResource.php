@@ -29,6 +29,8 @@ class EquipeConselhoDiocesanoResource extends Resource
 
     protected static ?string $navigationLabel = 'Conselho Diosesano';
 
+    protected static ?string $navigationGroup = 'Equipes';
+
     public static function form(Form $form): Form
     {
         return $form

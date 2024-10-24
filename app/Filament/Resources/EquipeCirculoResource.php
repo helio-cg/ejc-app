@@ -19,7 +19,7 @@ class EquipeCirculoResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-    protected static ?string $navigationLabel = 'Eqp. de Círculos';
+    protected static ?string $navigationLabel = 'Grupo de Círculos';
     protected static ?int $navigationSort = 3;
 
     protected static ?string $modelLabel = 'Equipes de Círculos';

@@ -31,6 +31,8 @@ class EquipeCoordenacaoGeralResource extends Resource
 
     protected static ?string $navigationLabel = 'Coordenação Geral';
 
+    protected static ?string $navigationGroup = 'Equipes';
+
     public static function form(Form $form): Form
     {
         return $form

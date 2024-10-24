@@ -33,8 +33,11 @@ class EquipeDirigenteResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-    protected static ?string $navigationLabel = 'Eqp. Dirigente';
+    protected static ?string $navigationLabel = 'Equipe Dirigente';
     protected static ?int $navigationSort = 3;
+
+    protected static ?string $navigationGroup = 'Equipes';
+
 
     public static function form(Form $form): Form
     {

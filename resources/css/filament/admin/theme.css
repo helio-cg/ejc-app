@@ -25,31 +25,14 @@
     padding-left: 18px !important;
 }
 /* topbar item*/
-.fi-topbar-item-label{
-    @apply text-gray-900;
-}
-.fi-topbar nav{
-    @apply bg-blue-700 text-white;
-}
 
-.fi-topbar-group-label{
-    @apply text-gray-50;
-}
+
 
 .fi-topbar-item a {
     @apply px-4 py-2 rounded-xl;
 }
 .fi-dropdown{
     @apply text-gray-50;
-}
-
-.fi-topbar-group-toggle-icon{
-    @apply text-gray-50;
-}
-
-.fi-topbar-item a > span,
-.fi-topbar-item a > svg {
-    @apply font-semibold text-gray-50;
 }
 
 .fi-topbar-item a:focus,

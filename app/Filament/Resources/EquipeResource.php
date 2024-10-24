@@ -37,6 +37,7 @@ class EquipeResource extends Resource
 
     protected static ?string $modelLabel = 'Equipes de Trabalho';
 
+    protected static ?string $navigationGroup = 'Equipes';
 
     public static function form(Form $form): Form
     {
@@ -122,7 +123,7 @@ class EquipeResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
-            ->query(Equipe::query()->where('equipe','!=','Dirigente'))
+            ->query(Equipe::query()->where('equipe','!=','Dirigente')->where('equipe','!=','Conselho Diosesano')->where('equipe','!=','Coordenação Geral'))
             ->defaultPaginationPageOption(25)
             ->columns([
                 Tables\Columns\Layout\Split::make([
