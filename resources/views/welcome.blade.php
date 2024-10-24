@@ -33,7 +33,6 @@
     font-size: 16px; /* Tamanho da fonte */
     cursor: pointer; /* Cursor de mão ao passar o mouse */
     font-weight: bold;
-    margin: 10px;
     transition: background-color 0.3s; /* Transição suave para a cor de fundo */
 }
 
@@ -50,17 +49,19 @@
             <h2>Cadastro das equipes de trabalho</h2>
             <h3>Clique no botão relacionado a sua equipe</h3>
             <br>
-            <p style="margin-bottom: 4px;"><a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/1/edit">Equipe de Secrétaria</a></p>
-            <p style="margin-bottom: 4px;"><a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/2/edit">Equipe de Cafezinho</a><br></p>
-            <a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/3/edit">Equipe de Circulos</a><br>
-            <a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/4/edit">Equipe de Compras</a><br>
-            <a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/5/edit">Equipe de Graçons</a><br>
-            <a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/6/edit">Equipe de Limpeza</a><br>
-            <a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/7/edit">Equipe de Liturgia</a><br>
-            <a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/8/edit">Equipe de Mini Bar</a><br>
-            <a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/9/edit">Equipe de Sala</a><br>
-            <a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/10/edit">Equipe de Sociodrama</a><br>
-            <a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/11/edit">Equipe de Vigilia</a>
+            <p style="margin-bottom: 50px;"><a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/1/edit">Equipe de Secrétaria</a></p>
+            <p style="margin-bottom: 50px;"><a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/2/edit">Equipe de Cafezinho</a></p>
+            <p style="margin-bottom: 50px;"><a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/3/edit">Equipe de Circulos</a></p>
+            <p style="margin-bottom: 50px;"><a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/4/edit">Equipe de Compras</a></p>
+            <p style="margin-bottom: 50px;"><a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/5/edit">Equipe de Graçons</a></p>
+            <p style="margin-bottom: 50px;"><a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/6/edit">Equipe de Limpeza</a></p>
+            <p style="margin-bottom: 50px;"><a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/7/edit">Equipe de Liturgia</a></p>
+            <p style="margin-bottom: 50px;"><a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/8/edit">Equipe de Mini Bar</a></p>
+            <p style="margin-bottom: 50px;"><a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/9/edit">Equipe de Sala</a></p>
+            <p style="margin-bottom: 50px;"><a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/10/edit">Equipe de Sociodrama</a></p>
+            <p style="margin-bottom: 50px;"><a class="btn-verde" href="http://ejc.stmip.net/equipe/equipes/11/edit">Equipe de Vigilia</a></p>
+            <br>
+            <br>
         </div>
     </body>
 </html>
