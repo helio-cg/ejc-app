@@ -61,7 +61,7 @@ class EquipeResource extends Resource
                 ])->from('md')->columnSpanFull(),
 
             Section::make('Jovens Coordenador')
-                ->description('Prevent abuse by limiting the number of requests per period')
+                ->description('Clique no botão ADICIONAR EM para preencher nome completo, endreço, data de nacimento e telefone do jovem coordenador')
                 ->collapsible()
                 ->persistCollapsed()
                 ->schema([
@@ -81,7 +81,7 @@ class EquipeResource extends Resource
                 ]),
 
                 Section::make('Casal Coordenador')
-                ->description('Prevent abuse by limiting the number of requests per period')
+                ->description('Clique no botão ADICIONAR EM para preencher nome completo, endreço, data de nacimento e telefone do casal coordenador')
                 ->collapsible()
                 ->persistCollapsed()
                 ->schema([
@@ -99,7 +99,7 @@ class EquipeResource extends Resource
                     ->columns(6)
                 ]),
             Section::make('Componentes Encontreiros')
-                ->description('Prevent abuse by limiting the number of requests per period')
+                ->description('Clique no botão ADICIONAR EM para preencher nome completo, endreço, data de nacimento e telefone do componentes encontreiros')
                 ->collapsible()
                 ->persistCollapsed()
                 ->schema([
