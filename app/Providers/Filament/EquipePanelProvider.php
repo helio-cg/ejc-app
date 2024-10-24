@@ -27,10 +27,11 @@ class EquipePanelProvider extends PanelProvider
             ->id('equipe')
             ->path('equipe')
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => Color::Blue,
             ])
             ->topNavigation()
             ->defaultThemeMode(ThemeMode::Light)
+            ->viteTheme('resources/css/filament/equipe/theme.css')
             ->discoverResources(in: app_path('Filament/Equipe/Resources'), for: 'App\\Filament\\Equipe\\Resources')
             ->discoverPages(in: app_path('Filament/Equipe/Pages'), for: 'App\\Filament\\Equipe\\Pages')
             ->pages([

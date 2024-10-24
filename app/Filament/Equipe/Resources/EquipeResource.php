@@ -27,6 +27,7 @@ class EquipeResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     protected static ?string $modelLabel = 'Equipes de Trabalho';
+    protected static ?string $navigationLabel = 'Equipes';
 
     public static function form(Form $form): Form
     {
