@@ -9,7 +9,6 @@ class Equipe extends Model
     protected $fillable = [
         'equipe',
         'image',
-        'tipo',
         'jovens',
         'casais',
         'componentes'

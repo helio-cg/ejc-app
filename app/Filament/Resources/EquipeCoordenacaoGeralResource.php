@@ -9,10 +9,9 @@ use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Split;
-use Filament\Forms\Components\Select;
+use App\Models\EquipeCoordenacaoGeral;
 use Filament\Forms\Components\Section;
 use Filament\Support\Enums\FontWeight;
-use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Components\Repeater;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
@@ -20,23 +19,17 @@ use Filament\Tables\Columns\ImageColumn;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
 use Illuminate\Database\Eloquent\Builder;
-use Filament\Forms\Components\ToggleButtons;
-use App\Filament\Resources\EquipeResource\Pages;
-use Ysfkaya\FilamentPhoneInput\Forms\PhoneInput;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use App\Filament\Resources\EquipeResource\RelationManagers;
+use App\Filament\Resources\EquipeCoordenacaoGeralResource\Pages;
+use App\Filament\Resources\EquipeCoordenacaoGeralResource\RelationManagers;
 
-class EquipeResource extends Resource
+class EquipeCoordenacaoGeralResource extends Resource
 {
     protected static ?string $model = Equipe::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-    protected static ?string $navigationLabel = 'Eqp. de Trabalho';
-    protected static ?int $navigationSort = 2;
-
-    protected static ?string $modelLabel = 'Equipes de Trabalho';
-
+    protected static ?string $navigationLabel = 'Coordenação Geral';
 
     public static function form(Form $form): Form
     {
@@ -57,9 +50,7 @@ class EquipeResource extends Resource
 
                 ])->from('md')->columnSpanFull(),
 
-
-
-            Section::make('Jovens')
+                Section::make('Jovens')
                 ->label('Jovem Coordenador')
                 ->description('Prevent abuse by limiting the number of requests per period')
                 ->collapsible()
@@ -98,31 +89,13 @@ class EquipeResource extends Resource
                     ])
                     ->columns(6)
                 ]),
-            Section::make('Componentes Encontreiros')
-                ->description('Prevent abuse by limiting the number of requests per period')
-                ->collapsible()
-                ->persistCollapsed()
-                ->schema([
-                    Repeater::make('componentes')
-                    ->label('')
-                    ->schema([
-                        TextInput::make('nome')->columnSpan(2)->required(),
-                        TextInput::make('endereco')->columnSpan(2)->required(),
-                        DatePicker::make('nacimento')
-                            ->label('Data de Nascimento')->format('d/m/Y')->required(),
-                        TextInput::make('telefone')
-                            ->label('Número com DDD')
-                            ->required(),
-                    ])
-                    ->columns(6)
-                ]),
             ]);
     }
 
     public static function table(Table $table): Table
     {
         return $table
-            ->query(Equipe::query()->where('equipe','!=','Dirigente'))
+            ->query(Equipe::query()->where('equipe','Coordenação Geral'))
             ->defaultPaginationPageOption(25)
             ->columns([
                 Tables\Columns\Layout\Split::make([
@@ -150,7 +123,7 @@ class EquipeResource extends Resource
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    //Tables\Actions\DeleteBulkAction::make(),
+                    Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ]);
     }
@@ -165,9 +138,9 @@ class EquipeResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListEquipes::route('/'),
-            'create' => Pages\CreateEquipe::route('/create'),
-            'edit' => Pages\EditEquipe::route('/{record}/edit'),
+            'index' => Pages\ListEquipeCoordenacaoGerals::route('/'),
+            'create' => Pages\CreateEquipeCoordenacaoGeral::route('/create'),
+            'edit' => Pages\EditEquipeCoordenacaoGeral::route('/{record}/edit'),
         ];
     }
 }

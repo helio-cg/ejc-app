@@ -75,5 +75,20 @@ class DatabaseSeeder extends Seeder
             'image' => 'vigilia.png',
             'equipe' => 'Vigilia',
         ]);
+
+        Equipe::create([
+            'image' => 'dirigente.png',
+            'equipe' => 'Dirigente',
+        ]);
+
+        Equipe::create([
+            'image' => 'dirigente.png',
+            'equipe' => 'Coordenação Geral',
+        ]);
+
+        Equipe::create([
+            'image' => 'dirigente.png',
+            'equipe' => 'Conselho Diosesano',
+        ]);
     }
 }

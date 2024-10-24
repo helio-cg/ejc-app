@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('image')->nullable();
             $table->string('equipe')->unique();
-            $table->integer('tipo')->default(1);
             $table->json('jovens')->nullable();
             $table->json('casais')->nullable();
             $table->json('componentes')->nullable();

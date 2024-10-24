@@ -7,12 +7,14 @@ use Filament\Tables;
 use App\Models\Equipe;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
+use TextColumn\TextColumnSize;
+use App\Models\EquipeDirigente;
 use Filament\Resources\Resource;
+use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Split;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Section;
 use Filament\Support\Enums\FontWeight;
-use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Components\Repeater;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
@@ -21,22 +23,18 @@ use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
 use Illuminate\Database\Eloquent\Builder;
 use Filament\Forms\Components\ToggleButtons;
-use App\Filament\Resources\EquipeResource\Pages;
-use Ysfkaya\FilamentPhoneInput\Forms\PhoneInput;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use App\Filament\Resources\EquipeResource\RelationManagers;
+use App\Filament\Resources\EquipeDirigenteResource\Pages;
+use App\Filament\Resources\EquipeDirigenteResource\RelationManagers;
 
-class EquipeResource extends Resource
+class EquipeDirigenteResource extends Resource
 {
     protected static ?string $model = Equipe::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-    protected static ?string $navigationLabel = 'Eqp. de Trabalho';
-    protected static ?int $navigationSort = 2;
-
-    protected static ?string $modelLabel = 'Equipes de Trabalho';
-
+    protected static ?string $navigationLabel = 'Eqp. Dirigente';
+    protected static ?int $navigationSort = 3;
 
     public static function form(Form $form): Form
     {
@@ -57,72 +55,95 @@ class EquipeResource extends Resource
 
                 ])->from('md')->columnSpanFull(),
 
-
-
-            Section::make('Jovens')
-                ->label('Jovem Coordenador')
-                ->description('Prevent abuse by limiting the number of requests per period')
+                Section::make('Diretor Espiritual')
                 ->collapsible()
                 ->persistCollapsed()
                 ->schema([
                     Repeater::make('jovens')
                     ->label('')
                     ->schema([
-                        TextInput::make('nome')->columnSpan(2)->required(),
-                        TextInput::make('endereco')->columnSpan(2)->required(),
+                        TextInput::make('nome')->required(),
                         DatePicker::make('nacimento')
-                            ->label('Data de Nascimento')
-                            ->format('d/m/Y')->required(),
+                            ->label('Data de Ordenação')->format('d/m/Y')->required(),
+                        TextInput::make('endereco')->required(),
+                        Grid::make(2)
+                        ->schema([
                         TextInput::make('telefone')
                             ->label('Número com DDD')
                             ->required(),
-                    ])
-                    ->columns(6)
+                        ]),
+                    ])->columns(3)
                 ]),
 
-            Section::make('Casal Coordenador')
-                ->description('Prevent abuse by limiting the number of requests per period')
+                Section::make('Casal Coordenador')
+                ->description('Casais da equipe dirigente')
                 ->collapsible()
                 ->persistCollapsed()
                 ->schema([
                     Repeater::make('casais')
                     ->label('')
                     ->schema([
-                        TextInput::make('nome')->columnSpan(2)->required(),
-                        TextInput::make('endereco')->columnSpan(2)->required(),
+                        TextInput::make('nome')->required(),
                         DatePicker::make('nacimento')
                             ->label('Data de Casamento')->format('d/m/Y')->required(),
+                        TextInput::make('endereco')->required(),
+                        Grid::make(2)
+                        ->schema([
                         TextInput::make('telefone')
                             ->label('Número com DDD')
                             ->required(),
-                    ])
-                    ->columns(6)
+                        ToggleButtons::make('funcao')
+                            ->grouped()
+                            ->options([
+                                'Pós Encontro' => 'Pós Encontro',
+                                'Fichas' => 'Fichas',
+                                'Montagem' => 'Montagem',
+                                'Finanças' => 'Finanças',
+                                'Palestra' => 'Palestra',
+                            ])->required()
+                            ]),
+                    ])->columns(3)
                 ]),
-            Section::make('Componentes Encontreiros')
-                ->description('Prevent abuse by limiting the number of requests per period')
+                Section::make('Componentes')
+                ->description('Jovens da equipe dirigente')
                 ->collapsible()
                 ->persistCollapsed()
                 ->schema([
                     Repeater::make('componentes')
                     ->label('')
                     ->schema([
-                        TextInput::make('nome')->columnSpan(2)->required(),
-                        TextInput::make('endereco')->columnSpan(2)->required(),
+                        TextInput::make('nome')->required(),
                         DatePicker::make('nacimento')
                             ->label('Data de Nascimento')->format('d/m/Y')->required(),
-                        TextInput::make('telefone')
-                            ->label('Número com DDD')
-                            ->required(),
+
+                        TextInput::make('endereco')->required(),
+                        Grid::make(2)
+                        ->schema([
+                            TextInput::make('telefone')
+                                ->label('Número com DDD')
+                                ->required(),
+                            ToggleButtons::make('funcao')
+                            ->grouped()
+                            ->options([
+                                'Pós Encontro' => 'Pós Encontro',
+                                'Fichas' => 'Fichas',
+                                'Montagem' => 'Montagem',
+                                'Finanças' => 'Finanças',
+                                'Palestra' => 'Palestra',
+                            ])->required()
+                        ]),
+
                     ])
-                    ->columns(6)
+                    ->columns(3)
                 ]),
+
             ]);
     }
 
     public static function table(Table $table): Table
     {
         return $table
-            ->query(Equipe::query()->where('equipe','!=','Dirigente'))
+            ->query(Equipe::query()->where('equipe','Dirigente'))
             ->defaultPaginationPageOption(25)
             ->columns([
                 Tables\Columns\Layout\Split::make([
@@ -150,7 +171,7 @@ class EquipeResource extends Resource
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    //Tables\Actions\DeleteBulkAction::make(),
+                   // Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ]);
     }
@@ -165,9 +186,9 @@ class EquipeResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListEquipes::route('/'),
-            'create' => Pages\CreateEquipe::route('/create'),
-            'edit' => Pages\EditEquipe::route('/{record}/edit'),
+            'index' => Pages\ListEquipeDirigentes::route('/'),
+            'create' => Pages\CreateEquipeDirigente::route('/create'),
+            'edit' => Pages\EditEquipeDirigente::route('/{record}/edit'),
         ];
     }
 }
