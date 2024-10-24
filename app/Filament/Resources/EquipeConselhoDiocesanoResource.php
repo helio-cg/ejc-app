@@ -8,15 +8,19 @@ use App\Models\Equipe;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
+use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Split;
 use Filament\Forms\Components\Section;
 use Filament\Support\Enums\FontWeight;
 use App\Models\EquipeConselhoDiocesano;
+use Filament\Forms\Components\Repeater;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Tables\Columns\ImageColumn;
+use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
 use Illuminate\Database\Eloquent\Builder;
+use Filament\Forms\Components\ToggleButtons;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\EquipeConselhoDiocesanoResource\Pages;
 use App\Filament\Resources\EquipeConselhoDiocesanoResource\RelationManagers;
@@ -49,6 +53,79 @@ class EquipeConselhoDiocesanoResource extends Resource
                     ]),
 
                 ])->from('md')->columnSpanFull(),
+
+                Section::make('Diretor Espiritual')
+                ->collapsible()
+                ->persistCollapsed()
+                ->schema([
+                    Repeater::make('jovens')
+                    ->label('')
+                    ->schema([
+                        TextInput::make('nome')->required(),
+                        DatePicker::make('nacimento')
+                            ->label('Data de Ordenação')->format('d/m/Y')->required(),
+                        TextInput::make('endereco')->required(),
+                        Grid::make(2)
+                        ->schema([
+                        TextInput::make('telefone')
+                            ->label('Número com DDD')
+                            ->required(),
+                        ]),
+                    ])->columns(3)
+                ]),
+                Section::make('Casais')
+                ->collapsible()
+                ->persistCollapsed()
+                ->schema([
+                    Repeater::make('casais')
+                    ->label('')
+                    ->schema([
+                        TextInput::make('nome')->required(),
+                        DatePicker::make('nacimento')
+                            ->label('Data de Casamento')->format('d/m/Y')->required(),
+                        TextInput::make('endereco')->required(),
+                        Grid::make(2)
+                        ->schema([
+                        TextInput::make('telefone')
+                            ->label('Número com DDD')
+                            ->required(),
+                        ToggleButtons::make('funcao')
+                            ->grouped()
+                            ->options([
+                                'Casal Apoio Diocesano' => 'Casal Apoio Diocesano',
+                            ])->required()
+                            ]),
+                    ])->columns(3)
+                ]),
+                Section::make('Componentes')
+                ->collapsible()
+                ->persistCollapsed()
+                ->schema([
+                    Repeater::make('componentes')
+                    ->label('')
+                    ->schema([
+                        TextInput::make('nome')->required(),
+                        DatePicker::make('nacimento')
+                            ->label('Data de Nascimento')->format('d/m/Y')->required(),
+
+                        TextInput::make('endereco')->required(),
+
+                            TextInput::make('telefone')
+                                ->label('Número com DDD')
+                                ->required(),
+                            ToggleButtons::make('funcao')
+                            ->grouped()
+                            ->options([
+                                'Jovem Diocesano' => 'Jovem Diocesano',
+                                'Assessor de Comunicação' => 'Assessor de Comunicação',
+                                'Assessora de Secretaria' => 'Assessora de Secretaria',
+                                'Assessora de Planejamento' => 'Assessora de Planejamento',
+                                'Assessor de Finanças' => 'Assessor de Finanças',
+                            ])->required()->columnSpanFull()
+
+
+                    ])->columns(2)
+                ]),
             ]);
     }
 

@@ -16,7 +16,13 @@ class PdfController extends Controller
         $equipe = Equipe::where('equipe',$equipe)->first();
         if($equipe->equipe == 'Dirigente'){
             $pdf = Pdf::loadView('equipe.dirigente', compact('equipe'));
-            return $pdf->stream('equipe-'.$equipe->equipe.'.pdf');
+            return $pdf->stream('equipe-dirigente.pdf');
+        }elseif ($equipe->equipe == 'Coordenação Geral'){
+            $pdf = Pdf::loadView('equipe.coordenacao-geral', compact('equipe'));
+            return $pdf->stream('equipe-coordenacao-geral.pdf');
+        }elseif ($equipe->equipe == 'Conselho Diosesano'){
+            $pdf = Pdf::loadView('equipe.conselho-diocesano', compact('equipe'));
+            return $pdf->stream('equipe-conselho-diocesano.pdf');
         }else{
             $pdf = Pdf::loadView('equipe', compact('equipe'));
             return $pdf->stream('equipe-de-'.$equipe->equipe.'.pdf');
