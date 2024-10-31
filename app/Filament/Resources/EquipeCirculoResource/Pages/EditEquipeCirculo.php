@@ -13,7 +13,13 @@ class EditEquipeCirculo extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
-            Actions\DeleteAction::make(),
+           // Actions\DeleteAction::make(),
+            Actions\Action::make('link')
+                ->label('Gerar PDF')
+                ->icon('heroicon-m-document')
+                //->iconButton()
+                ->url(fn ($record): string => route('pdf.circulo', ['equipe' => $record->equipe]))->openUrlInNewTab(),
+
         ];
     }
 }

@@ -2,9 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\Equipe;
 use App\Models\User;
+use App\Models\Equipe;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\EquipeCirculo;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -90,6 +91,31 @@ class DatabaseSeeder extends Seeder
         Equipe::create([
             'image' => 'dirigente.png',
             'equipe' => 'Conselho Diosesano',
+        ]);
+
+        EquipeCirculo::create([
+            'image' => 'amarelo.jpg',
+            'equipe' => 'Amarelo',
+        ]);
+
+        EquipeCirculo::create([
+            'image' => 'azul.jpg',
+            'equipe' => 'Azul',
+        ]);
+
+        EquipeCirculo::create([
+            'image' => 'laranja.jpg',
+            'equipe' => 'Laranja',
+        ]);
+
+        EquipeCirculo::create([
+            'image' => 'verde.jpg',
+            'equipe' => 'Verde',
+        ]);
+
+        EquipeCirculo::create([
+            'image' => 'vermelho.jpg',
+            'equipe' => 'Vermelho',
         ]);
     }
 }
